@@ -11,11 +11,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from spes/spesn device
 $(call inherit-product, device/xiaomi/spes/device.mk)
 
-# Inherit some common ProjectBlaze stuff.
-$(call inherit-product, vendor/blaze/config/common_full_phone.mk)
+# Inherit some common Matrixx stuff.
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Product Specifics
-PRODUCT_NAME := blaze_spes
+PRODUCT_NAME := lineage_spes
 PRODUCT_DEVICE := spes
 PRODUCT_BRAND := Redmi
 PRODUCT_MODEL := Redmi Note 11
@@ -26,10 +26,18 @@ PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 # Boot animaton
 TARGET_BOOT_ANIMATION_RES := 1080
 
-# Blaze Official Stuff
-BLAZE_BUILD_TYPE := OFFICIAL
-BLAZE_MAINTAINER := sayann70
-TARGET_FACE_UNLOCK_SUPPORTED := true
+# Matrixx
+MATRIXX_BUILD_TYPE := Official
+MATRIXX_MAINTAINER := sayann70
+WITH_GMS := true
+
+# Extra Matrixx Stuff
+MATRIXX_CHIPSET := SD680
+MATRIXX_BATTERY := 5000mah
+MATRIXX_DISPLAY := 2400x1080
+BUILD_GOOGLE_CONTACTS := true
+BUILD_GOOGLE_DIALER := true
+BUILD_GOOGLE_MESSAGE := true
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
